@@ -1,0 +1,175 @@
+:root {
+  --background-light: #ffffff;
+  --text-light: #333333;
+  --background-dark: #1f1f1f;
+  --text-dark: #f5f5f5;
+  --primary-color: #4e7dff;
+  --secondary-color: #e9ecef;
+  --shadow-light: 0 2px 8px rgba(0,0,0,0.1);
+  --shadow-dark: 0 2px 8px rgba(255,255,255,0.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.app {
+  min-height: 100vh;
+  padding: 2rem;
+  transition: all 0.3s ease;
+}
+
+.light {
+  background-color: var(--background-light);
+  color: var(--text-light);
+}
+
+.dark {
+  background-color: var(--background-dark);
+  color: var(--text-dark);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.theme-toggle {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  background: var(--secondary-color);
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+
+.theme-toggle:hover {
+  opacity: 0.9;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.search-container {
+  width: 100%;
+}
+
+.search-input {
+  width: 100%;
+  padding: 12px 20px;
+  font-size: 1.1rem;
+  border: 2px solid var(--secondary-color);
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  background-color: var(--background-light);
+  color: var(--text-light);
+}
+
+.dark .search-input {
+  background-color: var(--background-dark);
+  color: var(--text-dark);
+  border-color: #444;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+.emoji-container {
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow-light);
+}
+
+.dark .emoji-container {
+  box-shadow: var(--shadow-dark);
+}
+
+.recent-container {
+  margin-top: 1rem;
+}
+
+.recent-container h3 {
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.recent-emojis {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.emoji-button {
+  font-size: 1.5rem;
+  background: none;
+  border: 1px solid var(--secondary-color);
+  border-radius: 8px;
+  padding: 6px 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.emoji-button:hover {
+  background-color: var(--secondary-color);
+}
+
+.toast {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  animation: fadeIn 0.3s, fadeOut 0.3s 1.7s;
+}
+
+footer {
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #777;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@media (max-width: 768px) {
+  .app {
+    padding: 1rem;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+}
