@@ -38,9 +38,9 @@ export const emojiCombos = [
   },
   {
     id: 7,
-    combo: "⟡ pls note the ai inflicts emotional damage (ᴗ—ᴗ—)",
+    combo: "😎🤏😳🕶🤏",
     category: "funny",
-    tags: ["ai", "funny", "emotional", "damage"]
+    tags: ["funny", "emotional", "damage"]
   },
   {
     id: 8,
@@ -90,7 +90,42 @@ export const emojiCombos = [
     category: "food",
     tags: ["strawberry", "fruit", "sweet", "heart"]
   },
-  // 添加更多组合...
+  {
+    id: 16,
+    combo: "╭∩╮( •̀_•́ )╭∩╮",
+    category: "funny",
+    tags: ["funny", "despise", "damage", "finger"]
+  },
+  {
+    id: 17,
+    combo: "🌟🌙🌟🌙🌟",
+    category: "space",
+    tags: ["star", "moon", "night", "sky"]
+  },
+  {
+    id: 18,
+    combo: "🍔🍟🥤",
+    category: "food",
+    tags: ["burger", "fries", "drink", "fast food"]
+  },
+  {
+    id: 19,
+    combo: "(👁ˋ _ ˊ 👁)",
+    category: "funny",
+    tags: ["funny", "eyes", "stare", "look"]
+  },
+  {
+    id: 20,
+    combo: "▶︎ •၊၊||၊|။||||| 0:10",
+    category: "music",
+    tags: ["music", "play", "video", "time"]
+  },
+  {
+    id: 21,
+    combo: "˗ˏˋ 𓅰 ˎˊ˗",
+    category: "aesthetic",
+    tags: ["aesthetic", "art", "design", "style"]
+  }
 ];
 
 // 分类数据
