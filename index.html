@@ -1,13 +1,84 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- 基础SEO元标签 -->
+  <title>Emoji Finder - 快速查找、复制和收藏Emoji表情和组合</title>
+  <meta name="description" content="免费在线Emoji查找工具，提供数千种表情符号和艺术组合，支持搜索、分类浏览、一键复制和收藏功能，让聊天和社交媒体更加生动有趣。" />
+  <meta name="keywords" content="emoji, emoji搜索, emoji组合, emoji复制, 表情符号, 特殊符号, 表情包, 聊天表情" />
+  <meta name="author" content="Emoji Finder Team" />
+  
+  <!-- 规范链接 -->
+  <link rel="canonical" href="https://emoji.imwarn.com" />
+  
+  <!-- 搜索引擎控制 -->
+  <meta name="robots" content="index, follow" />
+  
+  <!-- Open Graph协议标签 (用于社交媒体分享) -->
+  <meta property="og:title" content="Emoji Finder - 快速查找和复制Emoji表情" />
+  <meta property="og:description" content="免费在线Emoji查找工具，提供数千种表情符号和艺术组合，支持搜索、分类和一键复制。" />
+  <meta property="og:image" content="https://emoji.imwarn.com/og-image.jpg" />
+  <meta property="og:url" content="https://emoji.imwarn.com" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Emoji Finder" />
+  
+  <!-- Twitter Card标签 -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Emoji Finder - 快速查找和复制Emoji表情" />
+  <meta name="twitter:description" content="免费在线Emoji查找工具，提供数千种表情符号和组合。" />
+  <meta name="twitter:image" content="https://emoji.imwarn.com/screenshots/twitter-card.jpg" />
+  
+  <!-- 移动设备优化 -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="apple-mobile-web-app-title" content="Emoji Finder" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  
+  <!-- PWA支持 -->
+  <link rel="manifest" href="/manifest.json" />
+  <meta name="theme-color" content="#4e7dff" />
+  
+  <!-- 预加载字体和关键资源 -->
+  <!-- <link rel="preload" href="/fonts/main-font.woff2" as="font" type="font/woff2" crossorigin /> -->
+  <link rel="stylesheet" href="/src/App.css" />
+</head>
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
+  
+  <!-- 结构化数据 (JSON-LD格式) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Emoji Finder",
+    "description": "一个帮助用户查找、复制和收藏Emoji表情和组合的在线工具",
+    "url": "https://emoji.imwarn.com",
+    "applicationCategory": "UtilityApplication",
+    "operatingSystem": "Web",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "CNY"
+    },
+    "featureList": "查找Emoji、复制Emoji、收藏Emoji组合、创建自定义组合",
+    "screenshot": [
+      {
+        "@type": "ImageObject",
+        "contentUrl": "https://emoji.imwarn.com/screenshots/desktop.png",
+        "caption": "Emoji Finder桌面视图 - 展示表情符号搜索功能",
+        "representativeOfPage": true
+      },
+      {
+        "@type": "ImageObject",
+        "contentUrl": "https://emoji.imwarn.com/screenshots/mobile.png",
+        "caption": "Emoji Finder移动视图 - 展示emoji组合功能"
+      }
+    ]
+  }
+  </script>
+</body>
 </html>
