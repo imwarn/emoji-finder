@@ -15,7 +15,7 @@ function Layout({ children, title, description, keywords, link }) {
   return (
     <>
       <Helmet>
-        <title>{title || t("app.title")}</title>
+        <title>{title || t("seo.title")}</title>
         <meta
           name="description"
           content={description || t("app.description")}
@@ -24,7 +24,7 @@ function Layout({ children, title, description, keywords, link }) {
         <link rel="canonical" href={link || t("app.link")} />
       </Helmet>
 
-      <header>
+      <header className="container">
         <h1>
           <Link to="/" className="logo-link">
             {t("app.title")}
@@ -43,7 +43,7 @@ function Layout({ children, title, description, keywords, link }) {
         </div>
       </header>
 
-      <nav className="main-nav" aria-label={t("nav.label")}>
+      <nav className="main-nav container" aria-label={t("nav.label")}>
         <Link
           to="/emoji"
           className={`nav-link ${
@@ -64,13 +64,13 @@ function Layout({ children, title, description, keywords, link }) {
 
       <main>{children}</main>
 
-      <footer>
+      <footer className="container">
         <p>{t("footer.copyInfo")}</p>
         <nav aria-label={t("footer.navLabel")} className="footer-links">
-          <Link to="/about">{t("footer.about")}</Link>
-          <Link to="/privacy">{t("footer.privacy")}</Link>
-          <Link to="/terms">{t("footer.terms")}</Link>
-          <Link to="/contact">{t("footer.contact")}</Link>
+          <Link to="https://imwarn.com">{t("footer.author")}</Link>
+          <Link to="https://blog.imwarn.com">{t("footer.blog")}</Link>
+          <Link to="https://pdftool.imwarn.com/">{t("footer.pdf")}</Link>
+          <Link to="https://imwarn.com/time">{t("footer.time")}</Link>
         </nav>
       </footer>
 

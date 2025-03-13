@@ -1,73 +1,159 @@
+import { useTranslation } from 'react-i18next';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import Layout from '../components/Layout';
 import { useEmoji } from '../hooks/useEmoji';
+import { useLanguage } from '../hooks/useLanguage';
+import HomeStats from '../components/HomeStats';
+import PopularCulturalEmojis from '../components/PopularCulturalEmojis';
+import { getCulturalImage } from '../utils/imageUtils';
 
 function HomePage() {
+  const { t } = useTranslation();
+  const { currentLanguage } = useLanguage();
   const { recentEmojis, handleEmojiSelect } = useEmoji();
+  
+  // 统计数据 - 实际项目中可能从API获取
+  const statsData = {
+    userCount: 10000,
+    emojiCount: 1800,
+    comboCount: 500,
+    languageCount: 5
+  };
   
   return (
     <Layout>
       <Helmet>
-        <title>Emoji Finder - 快速查找和复制表情符号和组合</title>
-        <meta name="description" content="免费在线Emoji查找工具，提供数千种表情符号和艺术组合，支持搜索、分类浏览、一键复制和收藏功能，让聊天和社交媒体更加生动有趣。" />
-        <link rel="canonical" href="https://你的域名.com" />
+        <title>{t('app.title')} - {t('app.slogan')}</title>
+        <meta name="description" content={t('app.description')} />
+        <meta name="keywords" content={t('seo.home.keywords')} />
+        <link rel="canonical" href={`https://你的域名.com/${currentLanguage}`} />
+        
+        {/* Open Graph 标签 */}
+        <meta property="og:title" content={`${t('app.title')} - ${t('app.slogan')}`} />
+        <meta property="og:description" content={t('app.description')} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={`https://你的域名.com/${currentLanguage}`} />
+        <meta property="og:image" content="https://你的域名.com/og-image.jpg" />
+        <meta property="og:locale" content={currentLanguage} />
       </Helmet>
       
+      {/* 英雄区域 - 使用文化适应的图片 */}
       <section className="hero-section">
         <div className="hero-content">
-          <h2>找到完美的表情符号<br />让您的消息更生动有趣</h2>
-          <p>简单搜索、快速复制、轻松收藏，为您的聊天添加创意和乐趣</p>
-          <div className="hero-buttons">
-            <Link to="/emoji" className="hero-btn primary">查找Emoji</Link>
-            <Link to="/combos" className="hero-btn secondary">浏览Emoji组合</Link>
+          <h1 className="hero-title">{t('home.hero.title')}</h1>
+          <p className="hero-subtitle">{t('home.hero.subtitle')}</p>
+          <p className="hero-description">{t('home.hero.description')}</p>
+          <div className="hero-ctas">
+            <Link to="/emoji" className="primary-button">
+              {t('home.hero.emojiButton')}
+            </Link>
+            <Link to="/combos" className="secondary-button">
+              {t('home.hero.combosButton')}
+            </Link>
           </div>
+        </div>
+        <div className="hero-image">
+          <img 
+            src={getCulturalImage('hero', currentLanguage)} 
+            alt={t('home.hero.imageAlt')} 
+            width="600" 
+            height="400"
+            loading="eager"
+          />
         </div>
       </section>
       
+      {/* 功能介绍 - 使用文化适应的图片 */}
       <section className="features-section">
-        <h2>主要功能</h2>
+        <h2>{t('home.features.title')}</h2>
         <div className="features-grid">
           <div className="feature-card">
             <div className="feature-icon">🔍</div>
-            <h3>快速搜索</h3>
-            <p>轻松找到你需要的表情符号</p>
+            <h3 className="feature-title">{t('home.features.search.title')}</h3>
+            <p>{t('home.features.search.description')}</p>
           </div>
+          
           <div className="feature-card">
             <div className="feature-icon">✨</div>
-            <h3>创意组合</h3>
-            <p>探索独特的emoji艺术组合</p>
+            <h3 className="feature-title">{t('home.features.combos.title')}</h3>
+            <p>{t('home.features.combos.description')}</p>
           </div>
+          
           <div className="feature-card">
             <div className="feature-icon">❤️</div>
-            <h3>收藏夹</h3>
-            <p>保存您喜爱的emoji和组合</p>
+            <h3 className="feature-title">{t('home.features.favorites.title')}</h3>
+            <p>{t('home.features.favorites.description')}</p>
           </div>
+          
           <div className="feature-card">
             <div className="feature-icon">📋</div>
-            <h3>一键复制</h3>
-            <p>无需手动输入，快速复制使用</p>
+            <h3 className="feature-title">{t('home.features.copy.title')}</h3>
+            <p>{t('home.features.copy.description')}</p>
           </div>
+        </div>
+        
+        <div className="features-image">
+          <img 
+            src={getCulturalImage('features', currentLanguage)} 
+            alt={t('home.features.imageAlt')}
+            width="800" 
+            height="450"
+          />
         </div>
       </section>
       
+      {/* 文化适应的流行表情区域 */}
+      <PopularCulturalEmojis />
+      
+      {/* 最近使用的表情 */}
       {recentEmojis.length > 0 && (
-        <section className="recent-section">
-          <h2>您最近使用的Emoji</h2>
+        <section className="recent-section" aria-labelledby="recent-heading">
+          <h2 id="recent-heading">{t('home.recent.title')}</h2>
           <div className="recent-grid">
             {recentEmojis.slice(0, 8).map(emoji => (
               <button 
                 key={emoji.id} 
-                onClick={() => handleEmojiSelect(emoji)} // 现在handleEmojiSelect已定义
+                onClick={() => handleEmojiSelect(emoji)} 
                 className="emoji-button large"
+                aria-label={emoji.name}
+                title={emoji.name}
               >
                 {emoji.native}
               </button>
             ))}
-            <Link to="/emoji" className="see-all-link">查看全部</Link>
+            <Link to="/emoji" className="see-all-link">{t('home.recent.seeAll')} →</Link>
           </div>
         </section>
       )}
+      
+      {/* 社区统计 - 使用HomeStats组件 */}
+      <HomeStats stats={statsData} />
+      
+      {/* 社区调用 */}
+      <section className="cta-section">
+        <h2>{t('home.cta.title')}</h2>
+        <p>{t('home.cta.description')}</p>
+        <div className="cta-buttons">
+          <Link to="/emoji" className="primary-button">{t('home.cta.startButton')}</Link>
+          <a href="https://github.com/yourusername/emoji-finder" 
+             target="_blank" 
+             rel="noopener noreferrer" 
+             className="secondary-button"
+          >
+            {t('home.cta.contributeButton')}
+          </a>
+        </div>
+        <div className="cta-image">
+          <img 
+            src={getCulturalImage('cta', currentLanguage)} 
+            alt={t('home.cta.imageAlt')} 
+            width="800" 
+            height="480"
+            loading="lazy"
+          />
+        </div>
+      </section>
     </Layout>
   );
 }

@@ -25,6 +25,10 @@
     "results": "Found {{count}} matches"
   },
   "seo": {
+    "title":"Emoji Finder - Quickly Find and Copy Emoji and Combinations",
+    "home": {
+      "keywords": "emoji, emoticon, search, emoji finder, emoji combinations, emoji copy, emoji art"
+    },
     "emoji": {
       "keywords": "emoji, expression, emoticon, smiley, search"
     }
@@ -84,7 +88,10 @@
     "hero": {
       "title": "Find the Perfect Emoji",
       "subtitle": "Make Your Messages More Vivid and Interesting",
-      "description": "Simple search, quick copy, easy favorites, add creativity and fun to your chat"
+      "description": "Simple search, quick copy, easy favorites, add creativity and fun to your chat",
+      "emojiButton": "Search Emoji",
+      "combosButton": "Explore Combinations",
+      "imageAlt": "Emoji selection showcase"
     },
     "features": {
       "title": "Main Features",
@@ -103,11 +110,30 @@
       "copy": {
         "title": "One-Click Copy",
         "description": "No manual input, quick copy and use"
-      }
+      },
+      "imageAlt": "Emoji finder features demonstration"
     },
     "recent": {
       "title": "Your Recently Used Emoji",
       "seeAll": "See All"
+    },
+    "stats": {
+      "title": "Our vision",
+      "users": "Users",
+      "emojis": "Emojis",
+      "combinations": "Combinations",
+      "languages": "{{count}} Languages"
+    },
+    "popular": {
+      "title": "Popular Emojis",
+      "description": "Top emojis loved by users in your region"
+    },
+    "cta": {
+      "title": "Join Our Emoji Community",
+      "description": "Find and share the best emoji expressions and combinations with users from around the world.",
+      "startButton": "Start Exploring",
+      "contributeButton": "Contribute",
+      "imageAlt": "Community collaboration illustration"
     }
   },
   "footer": {
@@ -116,7 +142,11 @@
     "about": "About Us",
     "privacy": "Privacy Policy",
     "terms": "Terms of Use",
-    "contact": "Contact Us"
+    "contact": "Contact Us",
+    "author": "Warn",
+    "blog": "Blog",
+    "pdf": "PDF Tools",
+    "time": "Current Time"
   },
   "toast": {
     "copied": "copied to clipboard"

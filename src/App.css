@@ -2,6 +2,7 @@
   --background-light: #ffffff;
   --text-light: #333333;
   --background-dark: #1f1f1f;
+  --background-dark-light: #2d2d2d;
   --text-dark: #f5f5f5;
   --primary-color: #4e7dff;
   --secondary-color: #e9ecef;
@@ -42,6 +43,250 @@ body {
 .dark {
   background-color: var(--background-dark);
   color: var(--text-dark);
+}
+
+/* 通用容器样式 - 添加在CSS顶部，保证所有内容区域一致性 */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* 主体内容容器 */
+main {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Hero部分优化 */
+.hero-section {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin: 2rem 0 4rem;
+  width: 100%;
+  overflow: hidden; /* 防止溢出 */
+}
+
+.hero-content {
+  flex: 1;
+  min-width: 300px; /* 确保内容区域最小宽度 */
+}
+
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 50%; /* 限制最大宽度 */
+}
+
+.hero-image img {
+  width: 100%;
+  height: auto;
+  max-width: 600px;
+  border-radius: 12px;
+  object-fit: contain; /* 保持图片比例 */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* 功能区样式优化 */
+.features-section {
+  margin: 4rem 0;
+  text-align: center;
+  width: 100%;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin: 3rem 0;
+}
+
+.feature-card {
+  padding: 2rem;
+  background: var(--secondary-color);
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+  height: 100%; /* 统一卡片高度 */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.features-image {
+  margin-top: 3rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.features-image img {
+  width: 100%;
+  max-width: 1000px; /* 限制最大宽度 */
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  object-fit: contain;
+}
+
+/* 热门表情区域优化 */
+.popular-emoji-section {
+  margin: 4rem 0;
+  text-align: center;
+  width: 100%;
+}
+
+.popular-emoji-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  gap: 1rem;
+  margin: 2rem auto; /* 居中对齐 */
+  max-width: 600px;
+}
+
+/* 最近使用的表情优化 */
+.recent-section {
+  margin: 4rem 0;
+  width: 100%;
+}
+
+.recent-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  justify-content: flex-start; /* 左对齐 */
+}
+
+/* 统计区域优化 */
+.stats-section {
+  background: var(--secondary-color);
+  padding: 3rem;
+  border-radius: 12px;
+  margin: 4rem 0;
+  width: 100%;
+}
+
+.dark .stats-section {
+  background: var(--background-dark-light);
+}
+
+.stats-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 2rem;
+}
+
+/* CTA区域优化 */
+.cta-section {
+  text-align: center;
+  margin: 4rem 0;
+  padding: 3rem;
+  background: var(--secondary-color);
+  border-radius: 12px;
+  width: 100%;
+  overflow: hidden; /* 防止内容溢出 */
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.cta-image {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  width: 100%;
+}
+
+.cta-image img {
+  max-width: 100%;
+  width: 100%;
+  max-height: 400px; /* 限制最大高度 */
+  object-fit: contain; /* 保持图片比例 */
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* 响应式调整增强 */
+@media (max-width: 992px) {
+  .hero-section {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .hero-image {
+    max-width: 100%; /* 小屏幕时图片占满宽度 */
+    margin-top: 2rem;
+  }
+  
+  .hero-title {
+    font-size: 2.4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.2rem;
+  }
+  
+  .hero-image img {
+    max-width: 100%;
+  }
+  
+  .feature-card {
+    padding: 1.5rem;
+  }
+  
+  .features-image img {
+    max-width: 100%;
+  }
+  
+  .stats-grid {
+    flex-direction: column;
+  }
+  
+  .cta-image img {
+    max-height: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 1.8rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.2rem;
+  }
+  
+  .feature-icon {
+    font-size: 2rem;
+  }
+  
+  .feature-title {
+    font-size: 1.1rem;
+  }
+  
+  .emoji-button.large {
+    width: 60px;
+    height: 60px;
+    font-size: 1.8rem;
+  }
+
+  .see-all-link {
+    height: 60px;
+  }
 }
 
 header, .tabs, .search-container, .emoji-container, 
@@ -200,6 +445,9 @@ h3 {
   color: white;
   border-color: var(--primary-color);
 }
+.dark .category-button{
+  color: var(--text-dark);
+}
 
 .favorites-section {
   margin-bottom: 1rem;
@@ -282,6 +530,7 @@ h3 {
 
 .dark .combo-action.favorite {
   background-color: #2d2d2d;
+  color: var(--text-dark);
 }
 
 .combo-action.favorite.active {
@@ -637,21 +886,6 @@ footer {
   justify-content: center;
 }
 
-.see-all-link {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  color: var(--primary-color);
-  border: 2px dashed var(--primary-color);
-  border-radius: 8px;
-  transition: all 0.2s ease;
-}
-
-.see-all-link:hover {
-  background: rgba(78,125,255,0.1);
-}
-
 /* 适配小屏幕 */
 @media (max-width: 768px) {
   .hero-content h2 {
@@ -802,4 +1036,322 @@ footer {
 .dark .loading-spinner {
   border-color: rgba(255, 255, 255, 0.1);
   border-top-color: var(--primary-color);
+}
+
+/* 添加到现有App.css中 */
+
+/* 首页特定样式 */
+.hero-section {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin: 2rem 0 4rem;
+}
+
+.hero-content {
+  flex: 1;
+}
+
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-image img {
+  width: 100%;
+  height: auto;
+  max-width: 600px;
+  object-fit: contain;
+  border-radius: 12px;
+}
+
+.hero-title {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--text-color);
+}
+
+.hero-description {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  line-height: 1.5;
+  color: var(--text-color);
+}
+
+.hero-ctas {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* 功能区样式 */
+.features-section {
+  margin: 4rem 0;
+  text-align: center;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin: 3rem 0;
+}
+
+.feature-card {
+  padding: 2rem;
+  background: var(--secondary-color);
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+}
+
+.feature-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.feature-title {
+  font-size: 1.3rem;
+  margin-bottom: 0.75rem;
+  color: var(--primary-color);
+}
+
+.features-image {
+  margin-top: 3rem;
+}
+
+.features-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* 热门表情区域 */
+.popular-emoji-section {
+  margin: 4rem 0;
+  text-align: center;
+}
+
+.popular-emoji-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  gap: 1rem;
+  margin: 2rem 0;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.emoji-button.large {
+  font-size: 2rem;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--secondary-color);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.emoji-button.large:hover {
+  transform: scale(1.1);
+  background: var(--primary-color);
+}
+
+/* 最近使用的表情 */
+.recent-section {
+  margin: 4rem 0;
+}
+
+.recent-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.see-all-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1rem;
+  height: 70px;
+  color: var(--primary-color);
+  font-weight: 500;
+  text-decoration: none;
+  border: 2px dashed var(--primary-color);
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.see-all-link:hover {
+  text-decoration: underline;
+  background: rgba(78,125,255,0.1);
+
+}
+
+/* 统计区域 */
+.stats-section {
+  text-align: center;
+  background: var(--secondary-color);
+  padding: 3rem;
+  border-radius: 12px;
+  margin: 4rem 0;
+}
+
+.stats-section h2 {
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
+.stats-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 2rem;
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-value {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-size: 1.1rem;
+  color: var(--text-color);
+}
+
+/* CTA区域 */
+.cta-section {
+  text-align: center;
+  margin: 4rem 0;
+  padding: 3rem;
+  background: var(--secondary-color);
+  border-radius: 12px;
+}
+
+.cta-section h2 {
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
+.cta-section p {
+  margin-bottom: 2rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.dark .cta-section {
+  background-color: var(--background-dark-light);
+}
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.cta-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  max-height: 300px;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+  .hero-section {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .hero-title {
+    font-size: 2.2rem;
+  }
+  
+  .hero-image img {
+    max-width: 400px;
+  }
+  
+  .feature-card {
+    padding: 1.5rem;
+  }
+  
+  .stats-grid {
+    flex-direction: column;
+  }
+}
+
+/* 针对特定语言的调整 */
+html[lang="zh"] .hero-title {
+  font-size: 2.5rem;
+}
+
+html[lang="ja"] .hero-title {
+  font-size: 2.4rem;
+}
+
+html[dir="rtl"] .hero-content {
+  text-align: right;
+}
+
+html[dir="rtl"] .see-all-link::after {
+  content: "←";
+  margin-left: 0;
+  margin-right: 0.5rem;
+}
+
+/* 为语言特定样式添加 */
+
+/* 中文语言特定样式 */
+html[lang="zh"] .hero-title {
+  font-size: 2.5rem; /* 中文标题可能需要较小字号 */
+}
+
+html[lang="zh"] .feature-title {
+  font-size: 1.2rem;
+}
+
+html[lang="zh"] .primary-button,
+html[lang="zh"] .secondary-button {
+  padding: 0.75rem 1.5rem; /* 为中文按钮提供更多空间 */
+}
+
+/* 日语语言特定样式 */
+html[lang="ja"] .hero-title {
+  font-size: 2.4rem;
+}
+
+/* 右到左语言支持 (如阿拉伯语、希伯来语) */
+html[dir="rtl"] .hero-content {
+  text-align: right;
+}
+
+html[dir="rtl"] .see-all-link::after {
+  content: "←";  /* 改变箭头方向 */
+  margin-left: 0;
+  margin-right: 0.5rem;
 }

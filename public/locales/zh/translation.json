@@ -1,7 +1,7 @@
 {
   "app": {
     "title": "表情符号查找器",
-    "description": "免费在线Emoji查找工具，提供数千种表情符号和艺术组合，支持搜索、分类浏览、一键复制和收藏功能。",
+    "description": "免费在线Emoji查找工具，提供数千种表情符号和艺术组合，支持搜索、分类浏览、一键复制和收藏功能，让聊天和社交媒体更加生动有趣。",
     "keywords": "emoji, emoji搜索, emoji组合, emoji艺术, emoji复制, emoji收藏",
     "link": "https://emoji.imwarn.com",
     "slogan": "为您的消息找到完美的表情符号"
@@ -25,6 +25,10 @@
     "results": "找到 {{count}} 个匹配项"
   },
   "seo": {
+    "title":"表情符号查找器 - 快速查找和复制表情符号和组合",
+    "home": {
+      "keywords": "emoji, 表情符号, 搜索, 表情查找器, 表情组合, 表情复制, 表情艺术"
+    },
     "emoji": {
       "keywords": "表情符号, 表情, emoji, 微笑, 搜索"
     }
@@ -84,7 +88,10 @@
     "hero": {
       "title": "找到完美的表情符号",
       "subtitle": "让您的消息更生动有趣",
-      "description": "简单搜索、快速复制、轻松收藏，为您的聊天添加创意和乐趣"
+      "description": "简单搜索、快速复制、轻松收藏，为您的聊天添加创意和乐趣",
+      "emojiButton": "搜索表情",
+      "combosButton": "探索组合",
+      "imageAlt": "表情选择展示"
     },
     "features": {
       "title": "主要功能",
@@ -103,20 +110,43 @@
       "copy": {
         "title": "一键复制",
         "description": "无需手动输入，快速复制使用"
-      }
+      },
+      "imageAlt": "表情查找器功能演示"
     },
     "recent": {
       "title": "您最近使用的表情",
       "seeAll": "查看全部"
+    },
+    "stats": {
+      "title": "我们的愿景",
+      "users": "用户",
+      "emojis": "表情符号",
+      "combinations": "表情组合",
+      "languages": "{{count}}种语言"
+    },
+    "popular": {
+      "title": "热门表情",
+      "description": "您所在地区用户喜爱的表情符号"
+    },
+    "cta": {
+      "title": "加入我们的表情社区",
+      "description": "与全球用户一起发现和分享最佳表情符号和组合。",
+      "startButton": "开始探索",
+      "contributeButton": "参与贡献",
+      "imageAlt": "社区协作插图"
     }
   },
   "footer": {
-    "copyInfo": "点击表情或组合即可复制 • 基于emoji-mart和emojicombos.com的创意",
+    "copyInfo": "点击表情或组合即可复制 • 基于emoji-mart和emojicombos的创意",
     "navLabel": "页脚导航",
     "about": "关于我们",
     "privacy": "隐私政策",
     "terms": "使用条款",
-    "contact": "联系我们"
+    "contact": "联系我们",
+    "author": "爱情的纹理",
+    "blog": "博客",
+    "pdf": "PDF工具",
+    "time": "当前时间"
   },
   "toast": {
     "copied": "已复制到剪贴板"
