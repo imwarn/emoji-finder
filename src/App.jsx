@@ -7,6 +7,9 @@ import { LanguageProvider } from './context/LanguageContext';
 import HomePage from './pages/HomePage';
 import EmojiPage from './pages/EmojiPage';
 import CombosPage from './pages/CombosPage';
+import RouteTracker from './components/RouteTracker';
+import CookieConsent from './components/CookieConsent';
+
 import './App.css';
 
 // 简单的加载组件
@@ -26,6 +29,7 @@ function App() {
           <Suspense fallback={<Loading />}>
             <LanguageProvider>
               <Router>
+                <RouteTracker />
                 <Routes>
                   <Route path="/" element={<HomePage />} />
                   <Route path="/emoji" element={<EmojiPage />} />
@@ -33,9 +37,11 @@ function App() {
                   <Route path="/combos/:category" element={<CombosPage />} />
                   <Route path="*" element={<Navigate to="/" replace />} />
                 </Routes>
+                <CookieConsent />
               </Router>
             </LanguageProvider>
           </Suspense>
+          
         </EmojiProvider>
       </ThemeProvider>
     </HelmetProvider>

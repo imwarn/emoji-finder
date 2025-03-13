@@ -6,6 +6,7 @@ import Layout from "../components/Layout";
 import ComboCreator from "../components/ComboCreator";
 import { categories } from "../data/emojiCombos";
 import { useEmoji } from "../hooks/useEmoji";
+import { trackSearch } from '../services/analytics';
 
 function CombosPage() {
   const { t } = useTranslation();
@@ -65,6 +66,9 @@ function CombosPage() {
           combo.combo.toLowerCase().includes(term) ||
           combo.tags.some((tag) => tag.toLowerCase().includes(term))
       );
+
+      // 跟踪搜索事件
+      trackSearch(term, 'combos', results.length);
     }
 
     setFilteredCombos(results);

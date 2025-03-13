@@ -150,5 +150,12 @@
   },
   "toast": {
     "copied": "copied to clipboard"
+  },
+  "privacy": {
+    "cookieTitle": "This website uses cookies",
+    "cookieText": "We use cookies and similar technologies to enhance your browsing experience, analyze site usage, and assist in our marketing efforts. By clicking 'Accept', you consent to our use of cookies. To learn more, please see our",
+    "policyLink": "Privacy Policy",
+    "accept": "Accept",
+    "decline": "Decline"
   }
 }

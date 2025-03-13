@@ -150,5 +150,12 @@
   },
   "toast": {
     "copied": "已复制到剪贴板"
+  },
+  "privacy": {
+    "cookieTitle": "本网站使用Cookie",
+    "cookieText": "我们使用Cookie和类似技术来增强您的浏览体验，分析网站使用情况，并协助我们的营销工作。点击'接受'，即表示您同意我们使用Cookie。要了解更多信息，请查看我们的",
+    "policyLink": "隐私政策",
+    "accept": "接受",
+    "decline": "拒绝"
   }
 }

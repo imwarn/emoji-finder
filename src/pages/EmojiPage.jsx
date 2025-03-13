@@ -1,5 +1,4 @@
 import { useState, useEffect, useMemo } from 'react';
-import { Helmet } from 'react-helmet-async';
 import Layout from '../components/Layout';
 import data from '@emoji-mart/data';
 import Picker from '@emoji-mart/react';
@@ -10,6 +9,7 @@ import { useLanguage } from '../hooks/useLanguage';
 import RecentEmojis from '../components/RecentEmojis';
 // 导入本地化数据，但只使用需要的函数
 import { getLocalizedEmojiKeywords } from '../data/emojiLocalization';
+import { trackSearch } from '../services/analytics';
 
 function EmojiPage() {
   // 只解构需要的t函数，不解构未使用的i18n
@@ -171,6 +171,9 @@ function EmojiPage() {
           }));
         
         setFilteredEmojis(filtered);
+
+        // 跟踪搜索事件
+        trackSearch(term, 'emoji', filtered.length);
       } catch (error) {
         console.error('搜索表情符号时出错:', error);
         setFilteredEmojis([]);

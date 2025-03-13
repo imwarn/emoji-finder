@@ -1,5 +1,6 @@
 import { createContext, useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import { trackLanguageSwitch } from '../services/analytics';
 
 // 创建上下文
 export const LanguageContext = createContext();
@@ -22,6 +23,7 @@ export function LanguageProvider({ children }) {
   // 切换语言功能
   const changeLanguage = async (lng) => {
     try {
+      const prevLang = i18n.language;
       // 使用i18next API切换语言 - 等待操作完成
       await i18n.changeLanguage(lng);
       console.log(`语言已切换到: ${lng}`);
@@ -32,6 +34,9 @@ export function LanguageProvider({ children }) {
       
       // 保存用户语言偏好到localStorage
       localStorage.setItem('emoji-finder-language', lng);
+
+      // 跟踪语言切换事件
+      trackLanguageSwitch(prevLang, lng);
     } catch (error) {
       console.error('切换语言时出错:', error);
     }

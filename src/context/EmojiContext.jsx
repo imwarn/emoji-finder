@@ -1,5 +1,7 @@
 import { createContext, useState, useEffect } from 'react';
 import { emojiCombos } from '../data/emojiCombos';
+import { trackEmojiSelect } from '../services/analytics';
+
 
 // 创建上下文
 export const EmojiContext = createContext();
@@ -46,7 +48,7 @@ export function EmojiProvider({ children }) {
     const updated = [emoji, ...recentEmojis.filter(e => e.id !== emoji.id)].slice(0, 20);
     setRecentEmojis(updated);
     localStorage.setItem('recentEmojis', JSON.stringify(updated));
-    
+    trackEmojiSelect(emoji);
     // 显示复制成功提示
     showCopiedToast(emoji.native);
   };
@@ -59,7 +61,7 @@ export function EmojiProvider({ children }) {
     // 复制组合到剪贴板
     navigator.clipboard.writeText(combo.combo)
       .catch(err => console.error('复制失败:', err));
-    
+    trackEmojiSelect(combo);
     // 显示复制成功提示
     showCopiedToast(combo.combo);
   };
