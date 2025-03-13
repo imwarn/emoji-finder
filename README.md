@@ -249,7 +249,7 @@ Emoji Finder支持多种语言，当前包括:
 
 ## 📧 联系方式
 
-项目维护者 - [your-email@example.com](mailto:your-email@example.com)
+项目维护者 - [WangEn](https://github.com/WangEn)
 
 ---
 

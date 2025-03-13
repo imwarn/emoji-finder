@@ -136,7 +136,7 @@ function HomePage() {
         <p>{t('home.cta.description')}</p>
         <div className="cta-buttons">
           <Link to="/emoji" className="primary-button">{t('home.cta.startButton')}</Link>
-          <a href="https://github.com/yourusername/emoji-finder" 
+          <a href="https://github.com/imwarn/emoji-finder" 
              target="_blank" 
              rel="noopener noreferrer" 
              className="secondary-button"
