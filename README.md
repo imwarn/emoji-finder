@@ -1,6 +1,6 @@
 # Emoji Finder - 表情符号和组合搜索工具
 
-![Emoji Finder 预览](public/screenshots/desket.png)
+![Emoji Finder 预览](public/screenshots/desktop.png)
 
 Emoji Finder是一个强大的Web应用，帮助用户快速查找、复制和收藏单个emoji表情符号以及精美的emoji组合艺术。支持多种分类浏览、关键词搜索、创建自定义组合等功能，让您的聊天和社交媒体内容更加生动有趣！
 
