@@ -671,3 +671,135 @@ footer {
   color: inherit;
   text-decoration: none;
 }
+
+/* 添加以下样式到App.css */
+
+/* 头部控制区域 */
+.header-controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* 语言切换器样式 */
+.language-switcher {
+  position: relative;
+}
+
+.language-current {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 8px 12px;
+  background: var(--secondary-color);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+.dark .language-current {
+  background: #333;
+  color: var(--text-dark);
+}
+
+.language-flag {
+  font-size: 1.2rem;
+}
+
+.dropdown-arrow {
+  font-size: 0.7rem;
+  margin-left: 4px;
+}
+
+.language-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 0.5rem;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+  min-width: 150px;
+  padding: 0.5rem 0;
+  list-style: none;
+}
+
+.dark .language-dropdown {
+  background: #333;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.language-option {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  text-align: left;
+  padding: 8px 16px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.language-option:hover {
+  background: var(--secondary-color);
+}
+
+.dark .language-option:hover {
+  background: #444;
+}
+
+.language-option.active {
+  background: rgba(78, 125, 255, 0.1);
+  font-weight: 500;
+}
+
+.dark .language-option.active {
+  background: rgba(78, 125, 255, 0.2);
+}
+
+@media (max-width: 480px) {
+  .language-name {
+    display: none;
+  }
+  
+  .language-current {
+    padding: 8px;
+  }
+}
+
+
+/* 加载指示器样式 */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+}
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  border-top-color: var(--primary-color);
+  animation: spin 1s ease-in-out infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.dark .loading-spinner {
+  border-color: rgba(255, 255, 255, 0.1);
+  border-top-color: var(--primary-color);
+}

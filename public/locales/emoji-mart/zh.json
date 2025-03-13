@@ -1,0 +1,29 @@
+{
+  "search": "搜索",
+  "clear": "清除",
+  "notfound": "未找到表情符号",
+  "skintext": "选择默认肤色",
+  "categories": {
+    "search": "搜索结果",
+    "recent": "常用表情",
+    "smileys": "表情与情感",
+    "people": "人物与身体",
+    "nature": "动物与自然",
+    "foods": "食物与饮料",
+    "activity": "活动",
+    "places": "旅行与地点",
+    "objects": "物品",
+    "symbols": "符号",
+    "flags": "旗帜",
+    "custom": "自定义"
+  },
+  "categorieslabel": "表情符号分类",
+  "skintones": {
+    "1": "默认肤色",
+    "2": "浅色肤色",
+    "3": "中浅色肤色",
+    "4": "中色肤色",
+    "5": "中深色肤色",
+    "6": "深色肤色"
+  }
+}

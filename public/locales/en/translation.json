@@ -1,0 +1,124 @@
+{
+  "app": {
+    "title": "Emoji Finder",
+    "description": "Free online Emoji search tool, provides thousands of emoji expressions and artistic combinations, supports search, category browsing, one-click copying, and favorite functions.",
+    "keywords": "emoji, emoji search, emoji combinations, emoji art, emoji copy, emoji favorites",
+    "link": "https://emoji.imwarn.com",
+    "slogan": "Find the perfect emoji for your message"
+  },
+  "theme": {
+    "toggle": "Toggle light/dark mode",
+    "light": "🌞 Light Mode",
+    "dark": "🌙 Dark Mode"
+  },
+  "nav": {
+    "label": "Main navigation",
+    "emoji": "😀 Single Emoji",
+    "combos": "✨ Emoji Combos"
+  },
+  "search": {
+    "label": "Search",
+    "placeholder": {
+      "emoji": "Search emoji...",
+      "combos": "Search emoji combos..."
+    },
+    "results": "Found {{count}} matches"
+  },
+  "seo": {
+    "emoji": {
+      "keywords": "emoji, expression, emoticon, smiley, search"
+    }
+  },
+  "common": {
+    "emoji": "emoji",
+    "copy": "Copy",
+    "copied": "Copied"
+  },
+  "emoji": {
+    "title": "Emoji Finder",
+    "recent": "Recently Used Emoji",
+    "noResults": "No matching emoji found",
+    "picker": "Emoji Picker",
+    "search": "Search Emoji",
+    "tryDifferentSearch": "Try different keywords or browse categories"
+  },
+  "combos": {
+    "title": "Emoji Combinations",
+    "keywords": "Search emoji combos...",
+    "create": "✨ Create New Combo",
+    "favorites": "❤️ My Favorites",
+    "noResults": "No matching emoji combos found 😢",
+    "copy": "Copy",
+    "categories": {
+      "label": "Combo Categories",
+      "view": "View",
+      "all": "All Combos",
+      "feature": "Featured Combos",
+      "aesthetic": "Aesthetic Style",
+      "love": "Love Combos",
+      "space": "Space",
+      "music": "Music Theme",
+      "movie": "Movie Theme",
+      "funny": "Funny Expressions",
+      "accessories": "Accessories",
+      "drinks": "Drinks",
+      "food": "Food",
+      "thoughts": "Thought Bubbles",
+      "message": "Message Combos",
+      "custom": "Custom"
+    }
+  },
+  "creator": {
+    "title": "Create Custom Emoji Combo",
+    "preview": "Your emoji combo:",
+    "placeholder": "Enter or paste your emoji combo here...",
+    "specialChars": "Special Characters:",
+    "category": "Category:",
+    "tags": "Tags:",
+    "addTag": "Add",
+    "tagPlaceholder": "Add tag...",
+    "cancel": "Cancel",
+    "save": "Save Combo"
+  },
+  "home": {
+    "hero": {
+      "title": "Find the Perfect Emoji",
+      "subtitle": "Make Your Messages More Vivid and Interesting",
+      "description": "Simple search, quick copy, easy favorites, add creativity and fun to your chat"
+    },
+    "features": {
+      "title": "Main Features",
+      "search": {
+        "title": "Quick Search",
+        "description": "Easily find the emoji you need"
+      },
+      "combos": {
+        "title": "Creative Combinations",
+        "description": "Explore unique emoji art combinations"
+      },
+      "favorites": {
+        "title": "Favorites",
+        "description": "Save your favorite emojis and combinations"
+      },
+      "copy": {
+        "title": "One-Click Copy",
+        "description": "No manual input, quick copy and use"
+      }
+    },
+    "recent": {
+      "title": "Your Recently Used Emoji",
+      "seeAll": "See All"
+    }
+  },
+  "footer": {
+    "copyInfo": "Click emoji or combinations to copy • Based on emoji-mart and emojicombos.com ideas",
+    "navLabel": "Footer navigation",
+    "about": "About Us",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Use",
+    "contact": "Contact Us"
+  },
+  "toast": {
+    "copied": "copied to clipboard"
+  }
+}

@@ -1,53 +1,79 @@
-import { Link, useLocation } from 'react-router-dom';
-import { useTheme } from '../hooks/useTheme';
-import { useEmoji } from '../hooks/useEmoji';
-import { Helmet } from 'react-helmet-async';
-import Toast from './Toast';
+import { Link, useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import { useTheme } from "../hooks/useTheme";
+import { useEmoji } from "../hooks/useEmoji";
+import Toast from "./Toast";
+import LanguageSwitcher from "./LanguageSwitcher";
+import { Helmet } from "react-helmet-async";
 
-function Layout({ children, title, description }) {
+function Layout({ children, title, description, keywords, link }) {
+  const { t } = useTranslation();
   const { darkMode, toggleDarkMode } = useTheme();
   const { copied } = useEmoji();
   const location = useLocation();
-  
+
   return (
     <>
       <Helmet>
-        <title>{title || 'Emoji Finder - 表情符号和组合查找工具'}</title>
-        <meta name="description" content={description || '免费在线Emoji查找工具，提供数千种表情符号和艺术组合，支持搜索、分类浏览、一键复制和收藏功能。'} />
+        <title>{title || t("app.title")}</title>
+        <meta
+          name="description"
+          content={description || t("app.description")}
+        />
+        <meta name="keywords" content={keywords || t("app.keywords")} />
+        <link rel="canonical" href={link || t("app.link")} />
       </Helmet>
-      
+
       <header>
         <h1>
-          <Link to="/" className="logo-link">Emoji Finder</Link>
+          <Link to="/" className="logo-link">
+            {t("app.title")}
+          </Link>
         </h1>
-        <button onClick={toggleDarkMode} className="theme-toggle" aria-label="切换深色/浅色模式">
-          {darkMode ? '🌞 亮色模式' : '🌙 暗色模式'}
-        </button>
+
+        <div className="header-controls">
+          <LanguageSwitcher />
+          <button
+            onClick={toggleDarkMode}
+            className="theme-toggle"
+            aria-label={t("theme.toggle")}
+          >
+            {darkMode ? t("theme.light") : t("theme.dark")}
+          </button>
+        </div>
       </header>
 
-      <nav className="main-nav" aria-label="主要导航">
-        <Link to="/emoji" className={`nav-link ${location.pathname === '/emoji' ? 'active' : ''}`}>
-          😀 单个Emoji
+      <nav className="main-nav" aria-label={t("nav.label")}>
+        <Link
+          to="/emoji"
+          className={`nav-link ${
+            location.pathname === "/emoji" ? "active" : ""
+          }`}
+        >
+          {t("nav.emoji")}
         </Link>
-        <Link to="/combos" className={`nav-link ${location.pathname.includes('/combos') ? 'active' : ''}`}>
-          ✨ Emoji组合
+        <Link
+          to="/combos"
+          className={`nav-link ${
+            location.pathname.includes("/combos") ? "active" : ""
+          }`}
+        >
+          {t("nav.combos")}
         </Link>
       </nav>
-      
-      <main>
-        {children}
-      </main>
-      
+
+      <main>{children}</main>
+
       <footer>
-        <p>点击emoji或组合即可复制 • 基于emoji-mart和emojicombos的创意</p>
-        <nav aria-label="页脚导航" className="footer-links">
-          <Link to="https://imwarn.com/">爱情的纹理</Link>
-          <Link to="https://imwarn.com/">博客</Link>
-          <Link to="https://imwarn.com/time/">当前时间</Link>
-          <Link to="https://imwarn.com/poetry/">纹理诗社</Link>
+        <p>{t("footer.copyInfo")}</p>
+        <nav aria-label={t("footer.navLabel")} className="footer-links">
+          <Link to="/about">{t("footer.about")}</Link>
+          <Link to="/privacy">{t("footer.privacy")}</Link>
+          <Link to="/terms">{t("footer.terms")}</Link>
+          <Link to="/contact">{t("footer.contact")}</Link>
         </nav>
       </footer>
-      
+
       {copied && <Toast text={copied} />}
     </>
   );

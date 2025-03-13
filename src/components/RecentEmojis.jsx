@@ -1,20 +1,21 @@
 import { useEmoji } from '../hooks/useEmoji';
-
+import { useTranslation } from 'react-i18next';
 function RecentEmojis() {
+  const { t } = useTranslation();
   const { recentEmojis, handleEmojiSelect } = useEmoji();
   
   if (recentEmojis.length === 0) return null;
   
   return (
     <div className="recent-container">
-      <h3>最近使用的Emoji</h3>
+      <h3>{t('home.recent.title')}</h3>
       <div className="recent-emojis">
         {recentEmojis.map(emoji => (
           <button 
             key={emoji.id} 
             onClick={() => handleEmojiSelect(emoji)}
             className="emoji-button"
-            aria-label={`复制 ${emoji.name} 表情符号`}
+            aria-label={`${t('common.copy')} ${emoji.name} ${t('common.emoji')}`}
           >
             {emoji.native}
           </button>
